@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saint-Valentin pour Bachira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ff0000",
+              "background-light": "#fff0f3",
+              "background-dark": "#230f0f",
+            },
+            fontFamily: {
+              "serif": ["Newsreader", "serif"],
+              "sans": ["Newsreader", "serif"],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Newsreader', serif;
+        scroll-behavior: smooth;
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+        50% { opacity: 0.8; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+      }
+      
+      .floating-heart-anim {
+        position: absolute;
+        bottom: -50px;
+        animation: float 15s linear infinite;
+        pointer-events: none;
+      }
+
+      .aspect-portrait { aspect-ratio: 4 / 5; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light text-[#181010] overflow-x-hidden font-serif">
+    <div id="root"></div>
+    <!-- Point d'entrée pour le build et l'exécution -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
